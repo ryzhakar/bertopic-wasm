@@ -1,0 +1,14 @@
+[package]
+name = "bertopic-wasm"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+candle-core = { git = "https://github.com/huggingface/candle.git", version = "0.9.1" }
+chrono = "0.4.41"
+color-eyre = "0.6.4"
+leptos = "0.8.2"
+rayon = "1.10.0"
+sqlx = "0.8.5"
+tokio = "1.45.0"
+trace = "0.1.7"
