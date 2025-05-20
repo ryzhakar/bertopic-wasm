@@ -4,11 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-burn = "0.17.0"
-candle-core = { git = "https://github.com/huggingface/candle.git", version = "0.9.1" }
-chrono = "0.4.41"
-color-eyre = "0.6.4"
-leptos = "0.8.2"
-rayon = "1.10.0"
-tokio = "1.45.0"
+burn = { version = "0.17.0", default-features = false, features = [
+    "ndarray", "webgpu",
+] }
+# Pin this getrandom version or everything breaks :(
+getrandom = { version = "0.3.2", default-features = false, features = [
+    "wasm_js",
+] }
+leptos = { version = "0.8.2", features = ["csr"] }
 trace = "0.1.7"
