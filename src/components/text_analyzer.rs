@@ -17,8 +17,8 @@ pub fn TextAnalyzer() -> impl IntoView {
         <div>
             <h2>"Text Analyzer"</h2>
             <textarea
-                on:input:target=move |event| {
-                    text_writer.update(|_| {event.target().value();})
+                on:input=move |event| {
+                    text_writer.set(event_target_value(&event))
                 }
                 placeholder="Enter text to analyze"
                 class="w-full h-32 p-2 border rounded"
